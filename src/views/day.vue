@@ -146,7 +146,9 @@ export default {
     function rdiochange(e){
       let name = (e.target.parentNode.children[1].innerHTML)
       findplayer(name).role.status="dead"
-      console.log(findplayer(name))
+      useCounterStore().gravestone.push(findplayer(name));
+
+      //console.log(findplayer(name))
     }
     check_gmae_result();
 
