@@ -7,6 +7,14 @@
   <router-view/>
 </template>
 
+<script>
+import router from './router'
+export default {
+  setup() {
+    router.push("/names")
+  },
+}
+</script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
