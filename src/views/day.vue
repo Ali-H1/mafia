@@ -132,12 +132,12 @@ export default {
     useCounterStore().incrementturn();
     let turn = ref(useCounterStore().turn);
     function check_gmae_result() {
-      console.log(useCounterStore());
+      //console.log(useCounterStore());
       if (useCounterStore().citysum <= useCounterStore().mafsum) {
         alert("مافیا برنده شد ");
         window.location.href = "/";
       } else if (useCounterStore().mafsum == 0) {
-        console.log(useCounterStore().mafsum);
+        //console.log(useCounterStore().mafsum);
         alert("شهروند برنده شد ");
         window.location.href = "/";
       }
@@ -159,7 +159,7 @@ export default {
           useCounterStore().citysum--;
         }
 
-      //console.log(findplayer(name))
+      ////console.log(findplayer(name))
     }
     check_gmae_result();
 

@@ -90,12 +90,12 @@ export default {
     }
     function addname() {
       store.list_of_names = list_of_names
-      //console.log("add");
+      ////console.log("add");
       if (inputname.value != "") {
         if (
           !list_of_names.value.find((element) => element.name == inputname.value)
         ) {
-          //console.log(inputname.value);
+          ////console.log(inputname.value);
           list_of_names.value.push(JSON.parse(`{ "name":"${inputname.value}","role":"" }`));
           store.count= list_of_names.value.length
         } else {
@@ -106,8 +106,8 @@ export default {
     }
     function remove_name(e) {
       store.list_of_names = list_of_names
-      //console.log(e.target.parentNode);
-      //console.log("remove");
+      ////console.log(e.target.parentNode);
+      ////console.log("remove");
       let name = e.target.parentNode.children[0].innerHTML.substr(
         e.target.parentNode.children[0].innerHTML.indexOf("-") + 2
       );

@@ -191,18 +191,18 @@ export default {
       return sum;
     });
     function increment(e) {
-      //console.log("increament");
+      ////console.log("increament");
       let name = e.target.parentNode.children[1].innerHTML.substr(
         e.target.parentNode.children[1].innerHTML.indexOf("x") + 2
       );
       if (sum_of_roles.value >= useCounterStore().count)
         alert("تعداد نقش ها بیشتر از تعداد بازی کن ها است");
       else list_of_roles.value.find((element) => element.name == name).number++;
-      //console.log(list_of_roles.value);
+      ////console.log(list_of_roles.value);
     }
     function decrement(e) {
-      //console.log("decrement");
-      //console.log(e.target.parentNode.children[1].innerHTML);
+      ////console.log("decrement");
+      ////console.log(e.target.parentNode.children[1].innerHTML);
       let number = e.target.parentNode.children[1].innerHTML.substr(
         0,
         e.target.parentNode.children[1].innerHTML.indexOf(" ")
@@ -214,17 +214,17 @@ export default {
         alert("مقدار وارد شده معتبر نیست");
         return;
       }
-      //console.log(number);
+      ////console.log(number);
       list_of_roles.value.find((element) => element.name == name).number--;
     }
     function shufle_roles() {
       let tmp = [];
       for (let role of list_of_roles.value) {
         if (role.number > 0) tmp.push(role);
-        //console.log(role);
+        ////console.log(role);
       }
-      //console.log(tmp);
-      //console.log(list_of_roles.value);
+      ////console.log(tmp);
+      ////console.log(list_of_roles.value);
         var mafsum = 0;
         var citysum = 0;
       for (
@@ -233,7 +233,7 @@ export default {
         index++
       ) {
         let role = Math.floor(Math.random() * tmp.length);
-        //console.log(role);
+        ////console.log(role);
         if (tmp[role].number > 0) {
           useCounterStore().list_of_names[index].role = tmp[role];
           if (tmp[role].side == "mafia") {
@@ -244,21 +244,21 @@ export default {
 
           tmp[role].number--;
           if (tmp[role].number <= 0) {
-            //console.log("slice");
+            ////console.log("slice");
             tmp.splice(role, 1);
-            //console.log(JSON.stringify(tmp));
+            ////console.log(JSON.stringify(tmp));
           }
         } else {
-          //console.log("else slice");
+          ////console.log("else slice");
 
           tmp.splice(role, 1);
         }
       }
         useCounterStore().mafsum = mafsum;
         useCounterStore().citysum = citysum;
-        console.log(mafsum,citysum,"maf","city")
+        //console.log(mafsum,citysum,"maf","city")
         router.push('/night')
-      //console.log(useCounterStore().list_of_names);
+      ////console.log(useCounterStore().list_of_names);
     }
     return {
       increment,

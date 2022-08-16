@@ -21,7 +21,7 @@ actions: {
     },
     checkrole(rolename){
         for (let player of this.list_of_names){
-            console.log(player.role.name)
+            //console.log(player.role.name)
             if(player.role.name==rolename && player.role.status!="dead")
             return true;
         }

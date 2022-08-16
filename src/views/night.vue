@@ -136,7 +136,7 @@ export default {
     let players = ref(useCounterStore().list_of_names);
     useCounterStore().incrementturn();
     let turn = ref(useCounterStore().turn);
-    console.log(turn.value, "turn");
+    //console.log(turn.value, "turn");
     var result = {
       attaked: "",
       attacked2: "",
@@ -147,7 +147,7 @@ export default {
       status: false,
     };
     function check_gmae_result() {
-      console.log(useCounterStore());
+      //console.log(useCounterStore());
       if (useCounterStore().citysum <= useCounterStore().mafsum) {
         alert("مافیا برنده شد ");
         window.location.href = "/";
@@ -192,7 +192,7 @@ export default {
         ingame: useCounterStore().checkrole("جان سخت"),
       },
     ];
-    console.log(night_states);
+    //console.log(night_states);
     let inputname = ref("");
     function findplayer(name) {
       for (let player of players.value) {
@@ -203,14 +203,14 @@ export default {
     function findrole(name) {
       for (let player of players.value) {
         if (player.role.name == name) {
-          console.log(player.role.ability);
+          //console.log(player.role.ability);
           return player;
         }
       }
       return -1;
     }
     function handleevents(role, target) {
-      console.log(role, target);
+      //console.log(role, target);
       switch (role) {
         case "مافیا":
           result.attaked = findplayer(target);
@@ -235,7 +235,7 @@ export default {
 
           break;
         case "دکتر":
-          console.log("eeee");
+          //console.log("eeee");
           result.docsave = findplayer(target);
           if (result.docsave.role.name == "دکتر") {
             if (result.docsave.role.ability.selfsave > 0) {
@@ -267,7 +267,7 @@ export default {
           break;
         case "جان سخت":
           if (findrole(role).role.ability.status > 0) {
-            console.log("die hard");
+            //console.log("die hard");
             result.status = true;
             findrole(role).role.ability.status--;
           }
@@ -295,7 +295,7 @@ export default {
     function endnight() {
       useCounterStore().night_data.kills = [];
       if (result.attaked == "") {
-        console.log();
+        //console.log();
       } else if (result.attaked == result.docsave) {
         result.attaked = "";
       } else {
@@ -310,11 +310,11 @@ export default {
         }
       }
       if (result.attacked2 == "") {
-        console.log();
+        //console.log();
       } else if (result.attacked2 == result.mafsaved) {
         result.attacked2 = "";
       } else {
-        console.log(result.attacked2);
+        //console.log(result.attacked2);
         result.attacked2.role.status = "dead";
         useCounterStore().night_data.kills.push(result.attacked2);
         useCounterStore().gravestone.push(result.attacked2);
@@ -325,12 +325,12 @@ export default {
           useCounterStore().citysum--;
         }
       }
-      console.log(useCounterStore().list_of_names);
+      //console.log(useCounterStore().list_of_names);
       if (result.status == true) useCounterStore().night_data.status = true;
       else {
         useCounterStore().night_data.status = false;
       }
-      console.log(useCounterStore().night_data);
+      //console.log(useCounterStore().night_data);
       check_gmae_result();
       router.push("/day");
     }
