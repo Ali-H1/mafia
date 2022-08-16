@@ -5,7 +5,7 @@
     style="background-color: #b3ccff"
     id="main_section"
   >
-    <button type="button" class="btn btn-warning mt-4 col-6">
+    <button type="button" class="btn btn-warning mt-4 ">
       <router-link to="/statuspage" style="text-decoration: none; color: white">
         مشاهده نقش ها</router-link
       >

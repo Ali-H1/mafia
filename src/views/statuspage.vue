@@ -21,7 +21,7 @@
               >
                 <li
                   class="list-group-item d-flex justify-content-between align-items-center border-start-0 border-top-0 border-end-0 border-bottom rounded-0 mb-2"
-                  :style="'color:' + player.role.color + ';'"
+                  :style="'color:' + player.role.color + ';text-decoration: '+(player.role.status=='dead' ? 'line-through':'none')+' ;'"
                 >
                   <div class="d-flex align-items-center ms-1 me-1" id="name">
                     {{ index + 1 }}- {{ player.name }}

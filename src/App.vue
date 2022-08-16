@@ -2,7 +2,7 @@
   <div id="nav" v-if="!started">
     <!-- <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link> |  -->
-    <button type="button" class="btn btn-primary" @click="start">شروغ بازی</button>
+    <button type="button" class="btn btn-primary" @click="start">شروع بازی</button>
   </div>
   <router-view/>
 </template>
