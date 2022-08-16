@@ -5,6 +5,12 @@
     style="background-color: #00012a"
     id="main_section"
   >
+    <button type="button" class="btn btn-warning mt-4 ">
+      <router-link to="/statuspage" style="text-decoration: none; color: white" class="col-12">
+        مشاهده نقش ها</router-link
+      >
+    </button>
+
     <div class="container py-5 h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col col-xl-10">
@@ -124,7 +130,7 @@
 <script>
 import { ref } from "vue";
 import { useCounterStore } from "../stores/store.js";
-import router from '../router/index.js';
+import router from "../router/index.js";
 export default {
   setup() {
     let players = ref(useCounterStore().list_of_names);
@@ -144,10 +150,10 @@ export default {
       console.log(useCounterStore());
       if (useCounterStore().citysum <= useCounterStore().mafsum) {
         alert("مافیا برنده شد ");
-        window.location.href = "/names";
+        window.location.href = "/";
       } else if (useCounterStore().mafsum == 0) {
         alert("شهروند برنده شد ");
-        window.location.href = "/names";
+        window.location.href = "/";
       }
     }
     check_gmae_result();
@@ -223,7 +229,7 @@ export default {
               result.mafsaved.role.ability.selfsave--;
             } else {
               alert("دکتر لکتر فقط یکبار خودش را سیو میکند ");
-              result.mafsaved=""
+              result.mafsaved = "";
             }
           }
 
@@ -236,7 +242,7 @@ export default {
               result.docsave.role.ability.selfsave--;
             } else {
               alert("دکتر فقط یکبار خودش را سیو میکند ");
-              result.docsave=""
+              result.docsave = "";
             }
           }
           break;
@@ -326,7 +332,7 @@ export default {
       }
       console.log(useCounterStore().night_data);
       check_gmae_result();
-      router.push("/day")
+      router.push("/day");
     }
     return {
       inputname,

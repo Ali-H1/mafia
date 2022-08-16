@@ -1,17 +1,25 @@
 <template>
-  <div id="nav">
+  <div id="nav" v-if="!started">
     <!-- <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link> |  -->
-    <router-link to="/names">names</router-link>
+    <button type="button" class="btn btn-primary" @click="start">شروغ بازی</button>
   </div>
   <router-view/>
 </template>
 
 <script>
+import { ref } from '@vue/reactivity'
 import router from './router'
+import { useCounterStore } from './stores/store'
 export default {
   setup() {
-    router.push("/names")
+    let started = ref(useCounterStore().started)
+    function start(){
+      useCounterStore().started = true
+      started.value =useCounterStore().started
+      router.push("/names")
+    }
+    return{start,started}
   },
 }
 </script>

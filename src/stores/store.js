@@ -3,6 +3,7 @@ import { defineStore } from "pinia";
 export const useCounterStore = defineStore("counter", {
   state: () => ({
     count: 0,
+    started:false,
     list_of_roles: [],
     list_of_names: [],
     mafsum: -1,

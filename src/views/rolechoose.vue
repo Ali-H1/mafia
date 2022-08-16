@@ -112,7 +112,6 @@ export default {
         status: "alive",
         side: "mafia",
         ability: {
-          target: "",
         },
       },
       {
@@ -122,7 +121,6 @@ export default {
         status: "alive",
         side: "mafia",
         ability: {
-          target: "",
           selfsave: 1,
         },
       },
@@ -133,7 +131,6 @@ export default {
         status: "alive",
         side: "city",
         ability: {
-          target: "",
           selfsave: 1,
         },
       },
@@ -144,7 +141,6 @@ export default {
         status: "alive",
         side: "city",
         ability: {
-          target: "",
         },
       },
       {
@@ -154,7 +150,6 @@ export default {
         status: "alive",
         side: "city",
         ability: {
-          target: "",
         },
       },
       {

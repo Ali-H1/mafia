@@ -4,6 +4,7 @@ import names from '../views/setnames.vue'
 import roles from '../views/rolechoose.vue'
 import night from '../views/night.vue'
 import day from '../views/day.vue'
+import statuspage from '../views/statuspage.vue'
 
 const routes = [
   // {
@@ -35,6 +36,11 @@ const routes = [
     path: '/day',
     name: 'day',
     component: day
+  },
+  {
+    path: '/statuspage',
+    name: 'statuspage',
+    component: statuspage
   },
 ]
 

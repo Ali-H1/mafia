@@ -5,6 +5,12 @@
     style="background-color: #b3ccff"
     id="main_section"
   >
+    <button type="button" class="btn btn-warning mt-4 col-6">
+      <router-link to="/statuspage" style="text-decoration: none; color: white">
+        مشاهده نقش ها</router-link
+      >
+    </button>
+
     <div class="container py-5 h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col col-xl-10">
@@ -76,7 +82,7 @@
                       v-for="(player, index) in list_of_names"
                       :key="index"
                     >
-                      <div v-if="player.role.status=='alive'">
+                      <div v-if="player.role.status == 'alive'">
                         <input
                           class="form-check-input me-2"
                           type="radio"
@@ -129,11 +135,11 @@ export default {
       console.log(useCounterStore());
       if (useCounterStore().citysum <= useCounterStore().mafsum) {
         alert("مافیا برنده شد ");
-        window.location.href = "/names";
+        window.location.href = "/";
       } else if (useCounterStore().mafsum == 0) {
         console.log(useCounterStore().mafsum);
         alert("شهروند برنده شد ");
-        window.location.href = "/names";
+        window.location.href = "/";
       }
     }
     function findplayer(name) {
@@ -143,10 +149,15 @@ export default {
       return -1;
     }
 
-    function rdiochange(e){
-      let name = (e.target.parentNode.children[1].innerHTML)
-      findplayer(name).role.status="dead"
+    function rdiochange(e) {
+      let name = e.target.parentNode.children[1].innerHTML;
+      findplayer(name).role.status = "dead";
       useCounterStore().gravestone.push(findplayer(name));
+      if (findplayer(name).role.side == "mafia") {
+          useCounterStore().mafsum--;
+        } else {
+          useCounterStore().citysum--;
+        }
 
       //console.log(findplayer(name))
     }
